@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+    
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+      
+        var data = google.visualization.arrayToDataTable([
+          ['Contry','values'],
+          ['United States', 2818 ],
+          ['India ',  972],
+          ['United Kingdom ', 419],
+          ['Japan ', 245],
+          ['South Korea  ', 199],
+          ['Spain, France, Italy,Guatemala,Canada,China', 1]
+          
+        ]);
+
+        var options = {
+          title: 'Average values of country',
+          curveType: 'function',
+          width:900,
+          height:500,
+          vAxis: {title: 'values'},
+          hAxis: {title: 'country'},
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('mychart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="mychart"></div>
+  </body>
+</html>
